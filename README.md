@@ -35,8 +35,14 @@ cp .env.example .env
 ### 依存ファイルをインストール
 composer install
 
+php artisan key:generate
+
+php artisan jwt:secret
+
 ### DBを作成
 php artisan migrate
+
+npm install
 ```
 
 Docker 操作（参考）

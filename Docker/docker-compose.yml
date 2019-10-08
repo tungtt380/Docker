@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    webmeishi:
+        build: .
+        container_name: webmeishi
+        depends_on:
+            - mydb_meishi
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - "../laravel:/var/www/vhost/caruvi.jp/laravel"
+            - "./working:/home/working"
+            - "./working/setting/php.ini:/etc/php.ini"
+            - "./working/setting/vhost.conf:/etc/httpd/conf.d/vhost.conf"
+        links:
+            - mydb_meishi
+    mydb_meishi:
+        container_name: mydb_meishi
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE: meishi_db
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: password
+        ports:
+            - "3306:3306"
+        volumes:
+            - "./working:/home/working"
+            - "./working/setting/mymy.cnf:/etc/mysql/conf.d/mymy.cnf"
+            - "./working/setting/mysql_init:/docker-entrypoint-initdb.d"
+            - "volume_mydb_meishi2:/var/lib/mysql"
+volumes:
+    volume_mydb_meishi2:
