@@ -1,0 +1,31 @@
+[2019-10-08 03:33:38] local.ERROR: Cannot declare class CreateUsersTable, because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot declare class CreateUsersTable, because the name is already in use at /var/www/vhost/caruvi.jp/laravel/database/migrations/2019_10_07_091441_create_users_table.php:31)
+[stacktrace]
+#0 {main}
+"} 
+[2019-10-08 03:36:03] local.ERROR: Command "migratenpm" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"migratenpm\" is not defined.
+
+Did you mean one of these?
+    migrate
+    migrate:fresh
+    migrate:install
+    migrate:refresh
+    migrate:reset
+    migrate:rollback
+    migrate:status at /var/www/vhost/caruvi.jp/laravel/vendor/symfony/console/Application.php:646)
+[stacktrace]
+#0 /var/www/vhost/caruvi.jp/laravel/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('migratenpm')
+#1 /var/www/vhost/caruvi.jp/laravel/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /var/www/vhost/caruvi.jp/laravel/vendor/laravel/framework/src/Illuminate/Console/Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /var/www/vhost/caruvi.jp/laravel/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(131): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /var/www/vhost/caruvi.jp/laravel/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
