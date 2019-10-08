@@ -43,6 +43,11 @@ php artisan jwt:secret
 php artisan migrate
 
 npm install
+
+### Make sure `storage/framework/cache`, `storage/framework/sessions`, `storage/framework/views` directories exist.  
+mkdir -p storage/framework/{sessions,views,cache}
+
+npm run prod
 ```
 
 Docker 操作（参考）
