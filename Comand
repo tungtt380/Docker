@@ -1,3 +1,11 @@
 docker pull ubuntu
 
+Run ubuntu from image
 docker run -it ubuntu
+
+attach container
+docker attach CONTAINER_ID
+
+Show process
+docker ps -a
+Ctr+P+Q Exit ubuntu
