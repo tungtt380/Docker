@@ -1,0 +1,1 @@
+=IF(ISBLANK(K9),"No Link",HYPERLINK("#E4857!B2",K9))
