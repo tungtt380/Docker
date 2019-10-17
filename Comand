@@ -6,6 +6,9 @@ docker run -it ubuntu
 attach container
 docker attach CONTAINER_ID
 
+Stop container
+docker stop conatainerId
+
 Show process
 docker ps -a
 Ctr+P+Q Exit ubuntu
