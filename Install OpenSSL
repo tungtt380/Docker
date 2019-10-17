@@ -1,0 +1,33 @@
+Step 1: Download OpenSSL Package
+
+Step 2: Install OpenSSL Manually
+cd /tmp
+wget https://www.openssl.org/source/openssl-1.1.1.tar.gz
+tar xvf openssl-1.1.1.tar.gz
+
+cd openssl-1.1.1
+sudo ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)'
+sudo make
+sudo make install
+
+sudo nano /etc/manpath.config
+Then add the following highlighted line at the end of the lines as shown below…
+MANPATH_MAP     /sbin                   /usr/share/man
+MANPATH_MAP     /usr/sbin               /usr/share/man
+MANPATH_MAP     /usr/local/bin          /usr/local/man
+MANPATH_MAP     /usr/local/bin          /usr/local/share/man
+MANPATH_MAP     /usr/local/sbin         /usr/local/man
+MANPATH_MAP     /usr/local/sbin         /usr/local/share/man
+MANPATH_MAP     /usr/X11R6/bin          /usr/X11R6/man
+MANPATH_MAP     /usr/bin/X11            /usr/X11R6/man
+MANPATH_MAP     /usr/games              /usr/share/man
+MANPATH_MAP     /opt/bin                /opt/man
+MANPATH_MAP     /opt/sbin               /opt/man
+MANPATH_MAP     /usr/local/ssl/bin      /usr/local/ssl/man
+
+sudo mandb
+
+sudo nano /etc/environment
+Then add the /usr/local/ssh/bin as shown in the line below…. Use the exact path as shown…
+PATH="/usr/local/sbin:/usr/local/bin:/usr/local/ssl/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
