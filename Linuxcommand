@@ -1,0 +1,4 @@
+Change date
+date -s "2020-12-25 $(date +%H:%M:%S)"
+
+date
