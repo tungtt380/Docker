@@ -5,3 +5,9 @@ date
 
 
 iptables -I INPUT 1 -p icmp -j ACCEPT
+
+
+[Putty error] Server refused our key Error
+chmod g-w /home/your_user
+chmod 700 /home/your_user/.ssh
+chmod 600 /home/your_user/.ssh/authorized_keys
