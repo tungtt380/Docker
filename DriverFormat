@@ -1,0 +1,66 @@
+#Check driver
+lsblk
+
+#Select driver
+sudo fdisk /dev/sdd
+
+#Delete all partition
+d
+
+#Create partition
+n
+
+#Set default
+enter
+enter
+
+#save changed
+w
+
+
+#ReCheck driver
+lsblk
+
+[tung@centos8 E4T]$ lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0   3.7T  0 disk
+└─sda1        8:1    0   3.7T  0 part /share/E4T
+sdb           8:16   0   7.3T  0 disk
+└─sdb1        8:17   0   7.3T  0 part /share/D
+sdc           8:32   0  59.6G  0 disk
+├─sdc1        8:33   0   600M  0 part /boot/efi
+├─sdc2        8:34   0     1G  0 part /boot
+└─sdc3        8:35   0    58G  0 part
+  ├─cl-root 253:0    0    35G  0 lvm  /
+  ├─cl-swap 253:1    0     6G  0 lvm  [SWAP]
+  └─cl-home 253:2    0  17.1G  0 lvm  /home
+sdd           8:48   0 232.9G  0 disk
+└─sdd1        8:49   0 232.9G  0 part
+
+
+#Format partition
+mkfs.ext4 /dev/sdd1
+
+
+$ sudo lsblk -o NAME,FSTYPE,LABEL,UUID,MOUNTPOINT
+NAME        FSTYPE      LABEL  UUID                                   MOUNTPOINT
+sda
+└─sda1      ext4        data4t 5533e9e7-02ec-4b65-b7f5-82a093202cc9   /share/E4T
+sdb
+└─sdb1      ext4               61908999-f705-4f37-851b-544895c29020   /share/D
+sdc
+├─sdc1      vfat               BDF9-49D6                              /boot/efi
+├─sdc2      ext4               78a5771b-6f57-4ff9-b89d-b396913f33f5   /boot
+└─sdc3      LVM2_member        NtOwML-aAy7-uUN6-DRXf-x8L1-1AuV-ghuZ7n
+  ├─cl-root xfs                baf251c9-3f75-4494-a316-2f2251b7d814   /
+  ├─cl-swap swap               e3c6e4e7-a973-422e-a1d2-c06468963760   [SWAP]
+  └─cl-home xfs                508e592a-3846-4cd5-a2e3-ebad13276634   /home
+sdd
+└─sdd1      ext4               657ff288-4584-47d2-9a7e-ddfe16ad3e19
+
+sudo mkdir -p /mnt/data
+sudo nano /etc/fstab
+
+
+# Test file changed. If not show any thing is OK
+sudo mount -a
