@@ -11,3 +11,37 @@ iptables -I INPUT 1 -p icmp -j ACCEPT
 chmod g-w /home/your_user
 chmod 700 /home/your_user/.ssh
 chmod 600 /home/your_user/.ssh/authorized_keys
+
+yum update
+=> Error: Failed to download metadata for repo 'AppStream': Cannot prepare internal mirrorlist: No URLs in mirrorlist
+cd /etc/yum.repos.d/
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+yum update -y
+
+netstat -tulpn | grep :1194
+ps -C openvpn
+
+sudo firewall-cmd --list-all
+$ sudo lsof -i -P -n
+sudo ss -tulwn | grep LISTEN
+
+sudo ss -tulwn | grep LISTEN
+
+firewall-cmd --zone=public --add-port=1194/udp --permanent
+firewall-cmd --get-active-zones
+firewall-cmd --list-ports
+
+--------Install OpenVPN------------
+curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh && chmod +x openvpn-install.sh && bash openvpn-install.sh
+{vivek@centos7:~ }$ sudo systemctl stop openvpn-server@server.service #<--- stop server
+{vivek@centos7:~ }$ sudo systemctl start openvpn-server@server.service #<--- start server
+{vivek@centos7:~ }$ sudo systemctl restart openvpn-server@server.service #<--- restart server
+{vivek@centos7:~ }$ sudo systemctl status openvpn-server@server.service #<--- get server status
+
+sudo systemctl status openvpn-server@server.service
+wget https://raw.githubusercontent.com/Angristan/openvpn-install/master/openvpn-install.sh -O centos7-vpn.sh
+chmod +x centos7-vpn.sh
+vi centos7-vpn.sh
+sudo ./centos7-vpn.sh
+------------------------------------
