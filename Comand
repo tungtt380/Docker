@@ -32,3 +32,6 @@ $ sudo systemctl start docker
 
 auto start docker service when boot
 $ sudo systemctl enable docker
+
+## Firewall ##
+https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-using-firewalld-on-centos-8/
