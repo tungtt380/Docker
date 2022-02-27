@@ -35,3 +35,6 @@ $ sudo systemctl enable docker
 
 ## Firewall ##
 https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-using-firewalld-on-centos-8/
+
+## Cockpit ##
+https://www.cyberciti.biz/faq/install-activate-cockpit-the-web-console-on-rhel-8/
